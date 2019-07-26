@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spring-cloud-gateway
+  labels:
+    app: spring-cloud-gateway
+spec:
+  selector:
+    matchLabels:
+      app: spring-cloud-gateway
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: spring-cloud-gateway
+    spec:
+      containers:
+        - name: gateway
+          image: wenhao/spring-cloud-gateway:1.0.0
+          ports:
+            - containerPort: 8080
+          env:
+            - name: SPRING_PROFILES_ACTIVE
+              value: "dev"
+            - name: CONFIG_SERVER_URL
+              value: "http://spring-cloud-config-server.microservice"
+            - name: CONFIG_SERVER_PORT
+              value: "8888"

@@ -1,0 +1,14 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: spring-cloud-eureka-server
+  labels:
+    app: spring-cloud-eureka-server
+spec:
+  selector:
+    app: spring-cloud-eureka-server
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8761
+  type: NodePort

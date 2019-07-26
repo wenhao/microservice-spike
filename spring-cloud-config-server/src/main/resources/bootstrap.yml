@@ -1,0 +1,37 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: spring-cloud-config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/wenhao/spike.git
+          username: wenhao@126.com
+          password: wH@930109
+          clone-on-start: true
+          force-pull: true
+          search-paths: 'spring-cloud/spring-cloud-config-server/config/{application}'
+          timeout: 60
+        encrypt:
+          enabled: false
+  security:
+    user:
+      name: admin
+      password: password
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+#
+#eureka:
+#  instance:
+#    prefer-ip-address: true
+#  client:
+#    register-with-eureka: true
+#    fetch-registry: false
+#    service-url:
+#      defaultZone: ${EUREKA_URL}

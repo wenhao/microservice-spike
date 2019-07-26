@@ -1,0 +1,13 @@
+server:
+  port: 8080
+
+application:
+  kubernetes:
+    env: DEV5
+    password: '{cipher}47871ce83e5c5d812414842cf8e7b921f4d9bfd8d1ac0ff87b2b205828e9a646'
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

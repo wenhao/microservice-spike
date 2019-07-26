@@ -1,0 +1,13 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: spring-cloud-product-service
+  labels:
+    app: spring-cloud-product-service
+spec:
+  selector:
+    app: spring-cloud-product-service
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080

@@ -1,0 +1,13 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: spring-cloud-ribbon-service
+  labels:
+    app: spring-cloud-ribbon
+spec:
+  selector:
+    app: spring-cloud-ribbon
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080

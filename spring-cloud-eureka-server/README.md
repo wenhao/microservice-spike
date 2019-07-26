@@ -1,0 +1,1 @@
+minikube service spring-cloud-eureka-server --url -n microservice

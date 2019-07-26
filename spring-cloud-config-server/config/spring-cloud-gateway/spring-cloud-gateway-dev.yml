@@ -1,0 +1,17 @@
+server:
+  port: 8080
+
+spring:
+  cloud:
+    gateway:
+      routes:
+      - id: order-service
+        predicates:
+          - Path=/orders/**
+        uri: "http://spring-cloud-order-service.microservice:80"
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh,info,health
